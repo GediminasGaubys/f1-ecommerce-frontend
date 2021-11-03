@@ -1,0 +1,30 @@
+<h1>Items Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addItem()">Add New Item</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Item Name</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewItem(item.id)">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-additem *ngIf="action === 'edit' || action === 'add'" [item]="selectedItem" (itemAddedEvent)="refreshData()"></app-additem>
+    <app-viewitem *ngIf="action === 'view'" [item]="selectedItem" (itemDeletedEvent)="refreshData()"></app-viewitem>
+  </div>
+</div>

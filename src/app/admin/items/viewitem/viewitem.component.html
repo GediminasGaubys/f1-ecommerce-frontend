@@ -1,0 +1,28 @@
+<div class="itemDetails">
+    <h1>Item Details</h1>
+
+    <table>
+        <tr>
+            <td>Item Id</td>
+            <td>{{item.id}}</td>
+        </tr>
+        <tr>
+            <td>Item Name</td>
+            <td>{{item.name}}</td>
+        </tr>
+        <tr>
+            <td>Item Racer</td>
+            <td>{{item.racer}}</td>
+        </tr>
+        <tr>
+            <td>Item Price</td>
+            <td>{{item.price}}</td>
+        </tr>
+    </table>
+    <br>
+    <img src="{{item.retrievedImage}}" height="200" width="200">
+    <br><br>
+    
+    <a class="btn btn-small btn-warning" (click)="editItem()">edit</a>
+    <a class="btn btn-small btn-danger" (click)="deleteItem()">delete</a>
+</div>
