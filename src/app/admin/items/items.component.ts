@@ -16,44 +16,64 @@ export class ItemsComponent implements OnInit {
   action: string;
 
   constructor(private httpClientService: HttpClientService,
-    private activedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
     this.refreshData();
   }
 
-  refreshData() {
+  // refreshData() {
+  //   this.httpClientService.getItems().subscribe(
+  //     response => this.handleSuccessfulResponse(response)
+  //   );
+  //   this.activedRoute.queryParams.subscribe(
+  //     (params) => {
+  //       const id = params['id'];
+  //       this.action = params['action'];
+  //       if (id) {
+  //         this.selectedItem = this.items.find(item => {
+  //           return item.id === +id;
+  //         });
+  //       }
+  //     }
+  //   );
+  // }
+
+  // handleSuccessfulResponse(response) {
+  //   this.items = new Array<Item>();
+  //   this.itemsRecieved = response;
+    
+  //   for (const item of this.itemsRecieved) {
+  //     const itemWithRetrievedImageField = new Item();
+  //     itemWithRetrievedImageField.id = item.id;
+  //     itemWithRetrievedImageField.name = item.name;
+  //     itemWithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + item.picByte;
+  //     itemWithRetrievedImageField.raceriD = item.raceriD;
+  //     itemWithRetrievedImageField.price = item.price;
+  //     itemWithRetrievedImageField.picByte=item.picByte;
+  //     this.items.push(itemWithRetrievedImageField);
+  //   }
+  // }
+
+  refreshData(){
     this.httpClientService.getItems().subscribe(
-      response => this.handleSuccessfulResponse(response)
+      response => this.handleSuccessfulResponse(response),
     );
-    this.activedRoute.queryParams.subscribe(
+
+    this.activatedRoute.queryParams.subscribe(
       (params) => {
-        const id = params['id'];
-        this.action = params['action'];
-        if (id) {
-          this.selectedItem = this.items.find(item => {
-            return item.id === +id;
-          });
+        this.action = params['action']
+        const selectedItemId = params['id'];
+        if (selectedItemId) {
+          this.selectedItem = this.items.find(item => item.id === +selectedItemId);
         }
       }
     );
   }
-
-  handleSuccessfulResponse(response) {
-    this.items = new Array<Item>();
-    this.itemsRecieved = response;
-    
-    for (const item of this.itemsRecieved) {
-      const itemWithRetrievedImageField = new Item();
-      itemWithRetrievedImageField.id = item.id;
-      itemWithRetrievedImageField.name = item.name;
-      itemWithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + item.picByte;
-      itemWithRetrievedImageField.racer = item.racer;
-      itemWithRetrievedImageField.price = item.price;
-      itemWithRetrievedImageField.picByte=item.picByte;
-      this.items.push(itemWithRetrievedImageField);
-    }
+  
+  handleSuccessfulResponse(response: Item[]) {
+    this.items = response;
   }
 
   addItem() {

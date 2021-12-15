@@ -1,0 +1,51 @@
+<div class="racerDetails">
+    <h1>Racer Details</h1>
+    <table>
+        <tr>
+            <td>Racer Id</td>
+            <td>{{racer.id}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{racer.name}}</td>
+        </tr>
+        <tr>
+            <td>Surname</td>
+            <td>{{racer.surname}}</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>{{racer.age}}</td>
+        </tr>
+        <tr>
+            <td>Car Number</td>
+            <td>{{racer.carNumber}}</td>
+        </tr>
+        <tr>
+            <td>Championships</td>
+            <td>{{racer.championships}}</td>
+        </tr>
+        <tr>
+            <td>Entries</td>
+            <td>{{racer.entries}}</td>
+        </tr>
+        <tr>
+            <td>Podiums</td>
+            <td>{{racer.podiums}}</td>
+        </tr>
+        <tr>
+            <td>Pole Positions</td>
+            <td>{{racer.polePositions}}</td>
+        </tr>
+        <tr>
+            <td>Races Won</td>
+            <td>{{racer.racesWon}}</td>
+        </tr>
+        <tr>
+            <td>Team</td>
+            <td>{{racer.team}}</td>
+        </tr>
+    </table>
+    <a class="btn btn-small btn-warning" (click)="editRacer()">Edit</a>   
+    <a class="btn btn-small btn-danger" (click)="deleteRacer()">Delete</a>
+</div>

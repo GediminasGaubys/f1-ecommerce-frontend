@@ -1,0 +1,34 @@
+<h1>Racers Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addRacer()">Add New Racer</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Racer Name</th>
+          <th>Racer Surname</th>
+          <th>Car Number</th>
+          <th>Team</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let racer of racers">
+          <td>{{racer.id}}</td>
+          <td>{{racer.name}}</td>
+          <td>{{racer.surname}}</td>
+          <td>{{racer.carNumber}}</td>
+          <td>{{racer.team}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewRacer(racer.id)">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-viewracer *ngIf="action === 'view'" [racer]="selectedRacer" (racerDeletedEvent)="refreshData()"></app-viewracer>
+    <app-addracer *ngIf="action === 'edit' || action === 'add'" [racer]="selectedRacer" (racerAddedEvent)="refreshData()"></app-addracer>
+  </div>
+</div>

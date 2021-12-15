@@ -19,8 +19,13 @@ import { HomeComponent } from './home/home.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { ProfileComponent } from './profile/profile.component';
-
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RacersComponent } from './admin/racers/racers.component';
+import { AddracerComponent } from './admin/racers/addracer/addracer.component';
+import { ViewracerComponent } from './admin/racers/viewracer/viewracer.component';
+import { ShopitemsComponent } from './shopitems/shopitems.component';
+import { ShopracersComponent } from './shopracers/shopracers.component';
 
 
 @NgModule({
@@ -38,13 +43,19 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     HomeComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    ProfileComponent
+    ProfileComponent,
+    RacersComponent,
+    AddracerComponent,
+    ViewracerComponent,
+    ShopitemsComponent,
+    ShopracersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

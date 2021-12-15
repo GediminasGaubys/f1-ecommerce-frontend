@@ -4,12 +4,25 @@
   <label for="name">Name</label>
   <input type="text" class="form-control" id="name" placeholder="Item Name" [(ngModel)]="item.name" name="name">
 
-  <label for="racer">Racer</label>
-  <input type="text" class="form-control" id="racer" placeholder="racer" name="racer" [(ngModel)]="item.racer">
+  <label for="description">Description</label>
+  <input type="text" class="form-control" id="description" placeholder="Item Description" [(ngModel)]="item.description" name="description">
+  
+  <label for="raceriD">Racer</label>
+  <select class="form-control" id="raceriD" name="raceriD" [(ngModel)]="item.raceriD">
+    <option value="volvo">1</option>
+    <option value="saab">2</option>
+    <option value="mercedes">3</option>
+    <option value="audi">4</option>
+  </select>
 
   <label for="price">Price</label>
-  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="item.price">
+  <input type="text" class="form-control" id="price" placeholder="Price" name="price" [(ngModel)]="item.price">
 
+  <label for="quantityInStock">Quantity In Stock</label>
+  <input type="text" class="form-control" id="quantityInStock" placeholder="Quantity In Stock" name="quantityInStock" [(ngModel)]="item.quantityInStock">
+
+  <label for="shippingInformation">Shipping Information</label>
+  <input type="text" class="form-control" id="shippingInformation" placeholder="Shipping Information" name="shippingInformation" [(ngModel)]="item.shippingInformation">
 
   <div class="form-group" *ngIf="item.id == null">
     <br>

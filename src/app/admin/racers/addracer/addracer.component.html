@@ -1,0 +1,36 @@
+
+<h1>{{racer.id == null ? 'Add' : 'Edit'}} Racer - {{racer.id}}</h1>
+
+<form>
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Racer Name" [(ngModel)]="racer.name" name="name">
+
+  <label for="surname">Surname</label>
+  <input type="text" class="form-control" id="surname" placeholder="surname" name="surname" [(ngModel)]="racer.surname">
+
+  <label for="carNumber">Car Number</label>
+  <input type="text" class="form-control" id="carNumber" placeholder="carNumber" name="carNumber" [(ngModel)]="racer.carNumber">
+
+  <label for="team">Team</label>
+  <input type="text" class="form-control" id="team" placeholder="team" name="team" [(ngModel)]="racer.team">
+
+  <label for="age">Age</label>
+  <input type="text" class="form-control" id="age" placeholder="age" name="age" [(ngModel)]="racer.age">
+
+  <label for="championships">Championships</label>
+  <input type="text" class="form-control" id="championships" placeholder="championships" name="championships" [(ngModel)]="racer.championships">
+
+  <label for="entries">Entries</label>
+  <input type="text" class="form-control" id="entries" placeholder="entries" name="entries" [(ngModel)]="racer.entries">
+
+  <label for="podiums">Podiums</label>
+  <input type="text" class="form-control" id="podiums" placeholder="podiums" name="podiums" [(ngModel)]="racer.podiums">
+
+  <label for="polePositions">Poles</label>
+  <input type="text" class="form-control" id="polePositions" placeholder="polePositions" name="polePositions" [(ngModel)]="racer.polePositions">
+
+  <label for="racesWon">Race Wins</label>
+  <input type="text" class="form-control" id="racesWon" placeholder="racesWon" name="racesWon" [(ngModel)]="racer.racesWon">
+
+  <button type="button" class="btn btn-success" (click)="saveRacer()">Save Racer</button>
+</form>

@@ -1,0 +1,29 @@
+<h1>Items List</h1>
+    <table>
+      <thead>
+        <tr>  
+            <th>ID</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Racer ID</th>
+            <th>shipping Information</th>
+            <th>quantity In Stock</th>
+        </tr>
+        
+        
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.raceriD}}</td>
+          <td>{{item.shippingInformation}}</td>
+          <td>{{item.quantityInStock}}</td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>

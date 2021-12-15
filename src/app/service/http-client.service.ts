@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../model/User';
 import { Item } from '../model/Item';
+import { Racer } from '../model/Racer';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,21 @@ export class HttpClientService {
 
   updateItem(updatedItem: Item) {
     return this.httpClient.put<Item>('https://f1-ecommerce-backend.azurewebsites.net/items/', updatedItem);
+  }
+
+  getRacers() {
+    return this.httpClient.get<Racer[]>('https://f1-ecommerce-backend.azurewebsites.net/racers/');
+  }
+
+  addRacer(newRacer: Racer) {
+    return this.httpClient.post<Racer>('https://f1-ecommerce-backend.azurewebsites.net/racers/', newRacer);
+  }
+
+  deleteRacer(id) {
+    return this.httpClient.delete<Racer>('https://f1-ecommerce-backend.azurewebsites.net/racers/' + id);
+  }
+
+  updateRacer(updatedRacer: Racer) {
+    return this.httpClient.put<Racer>('https://f1-ecommerce-backend.azurewebsites.net/racers/', updatedRacer);
   }
 }

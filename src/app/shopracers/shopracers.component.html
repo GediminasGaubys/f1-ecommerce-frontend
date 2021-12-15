@@ -1,0 +1,32 @@
+<h1>Racers List</h1>
+    <table>
+      <thead>
+            <tr>
+                <th>ID</th>
+                <th>Racer Name</th>
+                <th>Racer Surname</th>
+                <th>Car Number</th>
+                <th>Team</th>
+                <th>Championships</th>
+                <th>Entries</th>
+                <th>Podiums</th>
+                <th>Races Won</th>
+                <th>Pole Positions</th>
+              </tr>
+        
+      </thead>
+      <tbody>
+        <tr *ngFor="let racer of racers">
+          <td>{{racer.id}}</td>
+          <td>{{racer.name}}</td>
+          <td>{{racer.surname}}</td>
+          <td>{{racer.carNumber}}</td>
+          <td>{{racer.team}}</td>
+          <td>{{racer.championships}}</td>
+          <td>{{racer.entries}}</td>
+          <td>{{racer.podiums}}</td>
+          <td>{{racer.racesWon}}</td>
+          <td>{{racer.polePositions}}</td>
+        </tr>
+      </tbody>
+    </table>

@@ -44,7 +44,7 @@ export class AdditemComponent implements OnInit {
       uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
       this.selectedFile.imageName = this.selectedFile.name;
   
-      this.httpClient.post('http://localhost:8080/items/upload', uploadData, { observe: 'response' })
+      this.httpClient.post('https://f1-ecommerce-backend.azurewebsites.net/items/image/', uploadData, { observe: 'response' })
         .subscribe((response) => {
           if (response.status === 200) {
             this.httpClientService.addItem(this.item).subscribe(
@@ -67,8 +67,5 @@ export class AdditemComponent implements OnInit {
         }
       );
     }
-
-    
   }
-  
 }

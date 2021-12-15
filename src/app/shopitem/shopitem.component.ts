@@ -43,7 +43,7 @@ export class ShopitemComponent implements OnInit {
       itemwithRetrievedImageField.name = item.name;
       //populate retrieved image field so that book image can be displayed
       itemwithRetrievedImageField.retrievedImage = 'data:image/jpeg;base64,' + item.picByte;
-      itemwithRetrievedImageField.racer = item.racer;
+      itemwithRetrievedImageField.raceriD = item.raceriD;
       itemwithRetrievedImageField.price = item.price;
       itemwithRetrievedImageField.picByte = item.picByte;
       this.items.push(itemwithRetrievedImageField);

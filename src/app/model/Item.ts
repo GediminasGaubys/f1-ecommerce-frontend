@@ -1,8 +1,11 @@
 export class Item {
     id: number;
     name: string;
-    racer: string;
+    description: string;
+    raceriD: number;
     price: number;
+    shippingInformation: string;
+    quantityInStock: BigInteger;
     picByte: string;   
     retrievedImage: string; 
     isAdded: boolean;
